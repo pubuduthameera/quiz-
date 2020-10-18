@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:make_paper/views/creat_quiz.dart';
 
 import 'package:make_paper/views/play_quiz.dart';
 
@@ -17,6 +18,13 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('HomePage'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => CreateQuiz()));
+        },
       ),
       body: FutureBuilder(
         future: getfaqdata(),
